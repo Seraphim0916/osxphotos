@@ -1,12 +1,12 @@
 # CLAUDE.md — osxphotos（Vincent 的 fork）
 
-這是 RhetTbull/osxphotos 的 fork（`Seraphim0916/osxphotos`，上游遠端 `upstream`）。用途是整理 Vincent 自己 MacStudio 上的 iCloud 照片圖庫。這份檔只給代理看，不送回上游。
+這是 RhetTbull/osxphotos 的 fork（`Seraphim0916/osxphotos`，上游遠端 `upstream`）。用途是整理 Vincent 自己 MacStudio 上的 iCloud 照片圖庫。這份檔只給代理看，不送回上游（同目錄 `AGENTS.md` 連向本檔）。
 
 ## 一、這個工具是什麼（兩篇文章的重點）
 
 來源：
-- 「osxphotos Python API 深度教程：构建你自己的照片管理工具」，agent.csdn.net/6a4f197e662f9a54cb8c8695.html（2026-04-02）
-- 「OSXPhotos：macOS 照片库的全能管理工具」，blog.csdn.net/iotavault252/article/details/162307604（2026-06-25）
+- 「osxphotos Python API 深度教程：構建你自己的照片管理工具」，agent.csdn.net/6a4f197e662f9a54cb8c8695.html（2026-04-02）
+- 「OSXPhotos：macOS 照片庫的全能管理工具」，blog.csdn.net/iotavault252/article/details/162307604（2026-06-25）
 
 重點：
 - 用命令列與 Python API 操作 macOS「照片」App 的圖庫：直接讀圖庫資料庫，不用經過照片 App 的畫面，所以查詢、批次匯出、整理相簿、讀中繼資料都能自動化。
@@ -43,5 +43,6 @@
 
 ## 四、目前的整理工作
 
-1. **重複照片 → 相簿「重複待刪除」**：每組留一份。留的優先序：Apple 原生格式（HEIC／HEIF、HEVC、ProRAW、DNG、原況照片）> 有編輯或最愛 > 所在相簿多 > 原檔大；非 Apple 格式（JPEG、PNG 轉檔等）優先放進相簿。2026-10-27 第一輪已放 33 份，名單在 `~/.openclaw/staging/2026-10-27-photos-dup/`。
-2. **三年前的繳款紀錄、匯款紀錄 → 相簿「過期匯款紀錄」**：拍攝日期早於執行日往前三年。候選：截圖、照片 App 標籤 Document／Receipt／Handwriting；再用中文 OCR 找關鍵字（匯款、轉帳、繳款、繳費、轉出、交易成功、付款成功、收款人、ATM 等）判定。工作目錄 `~/.openclaw/staging/2026-10-27-photos-remit/`。相簿裡已有 Dot 放的 615 份（含三年內的），不要移出，有疑慮列給 Vincent。
+（新批次暫存與名單一律放 `~/.ssot/local/staging/<YYYY-MM-DD-主題>/`，因檔案放置政策已停寫舊 `~/.openclaw/staging/`；下方舊路徑僅為 2026-10-27 歷史紀錄。）
+1. **重複照片 → 相簿「重複待刪除」**：每組留一份。留的優先序：Apple 原生格式（HEIC／HEIF、HEVC、ProRAW、DNG、原況照片）> 有編輯或最愛 > 所在相簿多 > 原檔大；非 Apple 格式（JPEG、PNG 轉檔等）優先放進相簿。2026-10-27 第一輪已放 33 份（歷史名單 `~/.openclaw/staging/2026-10-27-photos-dup/`）。
+2. **三年前的繳款紀錄、匯款紀錄 → 相簿「過期匯款紀錄」**：拍攝日期早於執行日往前三年。候選：截圖、照片 App 標籤 Document／Receipt／Handwriting；再用中文 OCR 找關鍵字（匯款、轉帳、繳款、繳費、轉出、交易成功、付款成功、收款人、ATM 等）判定（2026-10-27 歷史目錄 `~/.openclaw/staging/2026-10-27-photos-remit/`）。相簿裡已有 Dot 放的 615 份（含三年內的），不要移出，有疑慮列給 Vincent。
